@@ -1,0 +1,18 @@
+html
+  head
+    meta(charset='utf-8')
+    style(type='text/css').
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+  body
+    include navbar
+
+    .container
+      .row
+        h1 Personal details
+        hr
+        each person in persons
+          .col-xs-12.col-md-3
+            h4= people.firstname
