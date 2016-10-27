@@ -9,12 +9,10 @@ var app = express(),
 
     function findUser(input) {
       for (var i = 0; i < userStore.length; i++) {
-        if (userStore[i].firstname.includes(input) === true) {
+        if (userStore[i].firstname.toLowerCase().includes(input.toLowerCase())) {
           return userStore[i];
-        } else {
-          if (userStore[i].lastname.includes(input) === true) {
-            return userStore[i];
-          }
+        } else if (userStore[i].lastname.toLowerCase().includes(input.toLowerCase())) {
+          return userStore[i];
         }
       }
     }

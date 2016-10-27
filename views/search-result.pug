@@ -13,6 +13,10 @@ html
     .container
       .row
         .col-md-8
-          h2= user.firstname
-          h2= user.lastname
-          h2= user.email
+          h1 Search Results
+          .card.card-block
+            if user
+              h4(class="card-title")= user.firstname + " " + user.lastname
+              p(class="card-text")= "Email: " + user.email
+            else
+              h4 User is not found
